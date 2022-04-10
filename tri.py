@@ -157,7 +157,12 @@ def main():
         
         lado3 = ((lado1**2) + (lado2**2) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
 
-        print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
+        
+        if(lado1 == lado2 and ang1 == 60):
+            print("El triángulo se identifica como uno de tipo EQUILÁTERO")
+        else:
+            print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
+            
         print('El area es: ', round(calcular4(lado1, lado2, ang1),3))
 
         time.sleep(2)
