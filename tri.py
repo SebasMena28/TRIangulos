@@ -153,10 +153,10 @@ def main():
             print('Intente de nuevo...')
             ang1 = float(input('Ingrese el valor del ángulo: '))
         
-        lado3 = ((lado1*2) + (lado22) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
+        lado3 = ((lado1**2) + (lado2**2) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
 
         print("El triangulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
-        print('El area es: ', round(calcular(lado1, lado2, lado3),3))
+        print('El area es: ', round(calcular4(lado1, lado2, ang1),3))
 
         print()
         input('Presione ENTER para continuar')
