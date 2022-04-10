@@ -88,6 +88,7 @@ def main():
         print("El triangulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
         print("Su área es de: ", round(calcular(lado1, lado2, lado3), 3))
 
+        time.sleep(2)
         print()
         input('Presione ENTER para continuar')
         print()
@@ -119,6 +120,7 @@ def main():
         print("El triangulo se identifica como uno de tipo RECTÁNGULO")
         print('El area es: ', calcular2(base,altura))
 
+        time.sleep(2)
         print()
         input('Presione ENTER para continuar')
         print()
@@ -155,9 +157,11 @@ def main():
         
         lado3 = ((lado1**2) + (lado2**2) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
 
+#34.241
         print("El triangulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
-        print('El area es: ', round(calcular4(lado1, lado2, ang1),3))
+        print('El area es: ', round(calcular(lado1, lado2, 15),3))
 
+        time.sleep(2)
         print()
         input('Presione ENTER para continuar')
         print()
@@ -185,6 +189,7 @@ def main():
 
         print('El area es: ', calcular5(lado1, ang1, ang2))
 
+        time.sleep(2)
         print()
         input('Presione ENTER para continuar')
         print()
