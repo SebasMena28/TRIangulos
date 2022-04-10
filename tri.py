@@ -49,10 +49,10 @@ def conocertipo(lad1, lad2, lad3):
 def menu():
     print('Ingrese una de las siguientes opciones: ')
     print()
-    print('1. Cálculo por medio de 3 lados')
-    print('2. Cálculo por medio de base y altura')
-    print('3. Cálculo por medio de 2 lados y un ángulo')
-    print('4. Cálculo por medio de 2 ángulos y un lado')
+    print('1. Cálculo del área conociendo los 3 lados')
+    print('2. Cálculo del área conociendo su base y altura')
+    print('3. Cálculo del área conociendo 2 lados y un ángulo')
+    print('4. Cálculo del área conociendo 2 ángulos y un lado')
     op = int(input('Respuesta: '))
     return op
 
@@ -85,8 +85,8 @@ def main():
 
         print()
 
-        print("El triangulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
-        print("Su área es de: ", round(calcular(lado1, lado2, lado3), 3))
+        print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
+        print("Su área es: ", round(calcular(lado1, lado2, lado3), 3))
 
         print()
         input('Presione ENTER para continuar')
@@ -94,7 +94,7 @@ def main():
         print('Volver a intentar:')
         print('1. Si')
         print('2. No')
-        op = input('Opcion: ')
+        op = input('Opción: ')
         if(op == '1'):
             os.system ("cls")
             main()
@@ -116,8 +116,8 @@ def main():
             print('El valor de la altura debe ser superior a 0')
             altura = float(input('Ingrese el valor de la altura: '))
 
-        print("El triangulo se identifica como uno de tipo RECTÁNGULO")
-        print('El area es: ', calcular2(base,altura))
+        print("El triangulo se identifica como uno de tipo TRIÁNGULO RECTÁNGULO")
+        print('El área es: ', calcular2(base,altura))
 
         print()
         input('Presione ENTER para continuar')
@@ -125,14 +125,14 @@ def main():
         print('Volver a intentar:')
         print('1. Si')
         print('2. No')
-        op = input('Opcion: ')
+        op = input('Opción: ')
         if(op == '1'):
             os.system ("cls")
             main()
         else:
             print()
             os.system ("cls")
-            print('Gracias por usar el sistema :)')
+            print('Gracias por usar el sistema ')
     
     elif(resp == 3):
         # ingreso del valor del lado 1 y control de este
@@ -155,7 +155,7 @@ def main():
         
         lado3 = ((lado1**2) + (lado2**2) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
 
-        print("El triangulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
+        print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
         print('El area es: ', round(calcular4(lado1, lado2, ang1),3))
 
         print()
@@ -164,14 +164,14 @@ def main():
         print('Volver a intentar:')
         print('1. Si')
         print('2. No')
-        op = input('Opcion: ')
+        op = input('Opción: ')
         if(op == '1'):
             os.system ("cls")
             main()
         else:
             print()
             os.system ("cls")
-            print('Gracias por usar el sistema :)')
+            print('Gracias por usar el sistema ')
     
     elif(resp == 4):
         lado1 = float(input('Ingrese el valor del lado 1: '))
@@ -191,7 +191,7 @@ def main():
         print('Volver a intentar:')
         print('1. Si')
         print('2. No')
-        op = input('Opcion: ')
+        op = input('Opción: ')
         if(op == '1'):
             os.system ("cls")
             main()
@@ -201,7 +201,7 @@ def main():
             print('Gracias por usar el sistema :)')
         
     else:
-        print('Esta opción no está disponible en el menu')
+        print('Esta opción no está disponible en el menú')
         print('Intente de nuevo... ')
         print()
         input('Presione ENTER para continuar')
