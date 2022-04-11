@@ -32,9 +32,9 @@ def esnumero():
        entrada = input()
        try:
            entrada = float(entrada)
-           while(entrada <= 0):
+           while(entrada <= 0 or entrada >=200):
                 print()
-                print('El valor debe ser superior a 0')
+                print('El valor ingresado es muy pequeño o demasiado grande')
                 entrada = input('Ingrese de nuevo: ')
                 entrada = float(entrada)
            return entrada
