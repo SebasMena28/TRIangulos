@@ -54,7 +54,7 @@ def menu():
     print('2. Cálculo del área conociendo su base y altura')
     print('3. Cálculo del área conociendo 2 lados y un ángulo')
     print('4. Cálculo del área conociendo 2 ángulos y un lado')
-    op = int(input('Respuesta: '))
+    op = (input('Respuesta: '))
     return op
 
 
@@ -65,7 +65,7 @@ def main():
     resp = menu()
     os.system ("cls")
 
-    if (resp == 1):
+    if (resp == '1'):
         # ingreso del valor del lado 1 y control de este
         lado1 = float(input('Ingrese el valor del lado 1: '))
         while(lado1 <= 0):
@@ -105,7 +105,7 @@ def main():
             os.system ("cls")
             print('Gracias por usar el sistema :)')
     
-    elif(resp == 2):
+    elif(resp == '2'):
         # ingreso del valor de la base y control de este
         base = float(input('Ingrese el valor de la base: '))
         while(base <= 0):
@@ -137,7 +137,7 @@ def main():
             os.system ("cls")
             print('Gracias por usar el sistema ')
     
-    elif(resp == 3):
+    elif(resp == '3'):
         # ingreso del valor del lado 1 y control de este
         lado1 = float(input('Ingrese el valor del lado 1: '))
         while(lado1 <= 0):
@@ -184,7 +184,7 @@ def main():
             os.system ("cls")
             print('Gracias por usar el sistema ')
     
-    elif(resp == 4):
+    elif(resp == '4'):
         lado1 = float(input('Ingrese el valor del lado 1: '))
         while(lado1 <= 0):
             print('El valor de un lado debe ser superior a 0')
