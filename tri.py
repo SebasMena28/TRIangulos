@@ -1,6 +1,8 @@
 import os
 import time
 import math
+from cmath import sin
+from cmath import cos
 
 # funcion para calcular el area del triangulo según sus lados
 def calcular(lado1, lado2, lado3):
@@ -17,7 +19,8 @@ def calcular3(ang1, ang2, ang3):
     print('SI SE PUEDE')
 
 def calcular4(lado1, lado2, ang):
-    area = (lado1 * lado2 * math.sin(ang)) / 2
+    angulo = math.radians(ang)
+    area = (lado1 * lado2 * sin(angulo)) / 2
     return area
 
 def calcular5(lado, ang1, ang2):
@@ -163,7 +166,7 @@ def main():
         else:
             print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
             
-        print('El area es: ', round(calcular4(lado1, lado2, ang1),3))
+        print('El area es: ', calcular4(lado1, lado2, ang1),3)
 
         time.sleep(2)
         print()
