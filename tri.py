@@ -29,7 +29,7 @@ def calcular5(lado, ang1, ang2):
 
 def esnumero():
     while True:
-       entrada = input('Escriba el numero: ')
+       entrada = input()
        try:
            entrada = float(entrada)
            while(entrada <= 0):
@@ -83,6 +83,7 @@ def main():
 
     if (resp == '1'):
         # ingreso del valor del lado 1 y control de este
+        print('Ingrese el valor del lado 1: ')
         lado1 = esnumero()
 
         # ingreso del valor del lado 2 y control de este
