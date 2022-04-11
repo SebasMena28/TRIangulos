@@ -22,8 +22,23 @@ def calcular4(lado1, lado2, ang):
     return area
 
 def calcular5(lado, ang1, ang2):
-    area = ( ((lado)**2) * math.sin(ang1) * math.sin(ang2) ) / (2 * math.sin(ang1 + ang2))
+    angulo1 = math.radians(ang1)
+    angulo2 = math.radians(ang2)
+    area = ( ((lado)**2) * math.sin(angulo1) * math.sin(angulo2) ) / (2 * math.sin(angulo1 + angulo2))
     return area
+
+def esnumero(es, num):
+    while True:
+       entrada = input('Escriba el numero: ')
+       try:
+           entrada = float(entrada)
+           while(entrada <= 0):
+            print('El valor de un lado debe ser superior a 0')
+            entrada = input('Escriba el valor del ', es, ' ', num ,' : ')
+           return entrada
+       except ValueError:
+           print ("CHUPEEEMOOOOOOOOOOS!!!!!!!!!! y vuelve a ingresar otro valor, que sea numero, gil")
+
 
 # función para contar los lados iguales del triangulo
 def conocertipo(lad1, lad2, lad3):
@@ -67,10 +82,7 @@ def main():
 
     if (resp == '1'):
         # ingreso del valor del lado 1 y control de este
-        lado1 = float(input('Ingrese el valor del lado 1: '))
-        while(lado1 <= 0):
-            print('El valor de un lado debe ser superior a 0')
-            lado1 = float(input('Ingrese el valor del lado 1: '))
+        lado1 = esnumero('lado', '1')
 
         # ingreso del valor del lado 2 y control de este
         lado2 = float(input('Ingrese el valor del lado 2: '))
@@ -119,7 +131,7 @@ def main():
             altura = float(input('Ingrese el valor de la altura: '))
 
         print("El triangulo se identifica como uno de tipo TRIÁNGULO RECTÁNGULO")
-        print('El área es: ', calcular2(base,altura))
+        print('El área es: ', round(calcular2(base,altura),3) )
 
         time.sleep(2)
         print()
