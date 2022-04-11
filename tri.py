@@ -33,12 +33,15 @@ def esnumero():
        try:
            entrada = float(entrada)
            while(entrada <= 0):
+                print()
                 print('El valor debe ser superior a 0')
                 entrada = input('Ingrese de nuevo: ')
                 entrada = float(entrada)
            return entrada
        except ValueError:
-           print ("Error! Los textos no pueden ser ingresados. Intente de nuevo: ")
+           print()
+           print ("Error! Los textos no pueden ser ingresados.")
+           print("Intente de nuevo:")
 
 
 # función para contar los lados iguales del triangulo
@@ -70,6 +73,7 @@ def menu():
     print('2. Cálculo del área conociendo su base y altura')
     print('3. Cálculo del área conociendo 2 lados y un ángulo')
     print('4. Cálculo del área conociendo 2 ángulos y un lado')
+    print('5. Salir')
     op = (input('Respuesta: '))
     return op
 
@@ -86,16 +90,21 @@ def main():
         print('Ingrese el valor del lado 1: ')
         lado1 = esnumero()
 
+        print()
         print('Ingrese el valor del lado 2: ')
         lado2 = esnumero()
 
+        print()
         print('Ingrese el valor del lado 3: ')
         lado3 = esnumero()
 
         print()
 
         print("El triángulo se identifica como uno de tipo ", conocertipo(lado1, lado2, lado3))
-        print("Su área es: ", round(calcular(lado1, lado2, lado3), 3))
+
+        resultado = calcular(lado1, lado2, lado3)
+        print("El area es: ", '{0:.2f}'.format(resultado))
+
 
         time.sleep(2)
         print()
@@ -122,7 +131,10 @@ def main():
         altura = esnumero()
 
         print("El triangulo se identifica como uno de tipo TRIÁNGULO RECTÁNGULO")
-        print('El área es: ', round(calcular2(base,altura),3) )
+
+        resultado = calcular2(base, altura)
+        print("El area es: ", '{0:.2f}'.format(resultado))
+
 
         time.sleep(2)
         print()
@@ -150,6 +162,10 @@ def main():
 
         print('Ingrese el valor del ángulo: ')
         ang1 = esnumero()
+        
+        while(ang1 >= 180):
+            print('El valor del ángulo es inválido. Intente de nuevo: ')
+            ang1 = esnumero()
         
         lado3 = ((lado1**2) + (lado2**2) - (2 * lado1 * lado2 * math.cos(ang1)))*0.5
 
@@ -190,7 +206,19 @@ def main():
         print('Ingrese el valor del ángulo 2: ')
         ang2 = esnumero()
 
-        print('El area es: ', round(calcular5(lado1, ang1, ang2),3))
+        while (ang1+ang2 >= 180):
+            print('El valor de los ángulos es inválido')
+            print('Intente de nuevo:')
+            print()
+            print('Ingrese el valor del ángulo 1: ')
+            ang1 = esnumero()
+
+            print('Ingrese el valor del ángulo 2: ')
+            ang2 = esnumero()
+
+        
+        resultado = calcular5(lado1, ang1, ang2)
+        print("El area es: ", '{0:.2f}'.format(resultado))
 
         time.sleep(2)
         print()
@@ -208,6 +236,10 @@ def main():
             os.system ("cls")
             print('Gracias por usar el sistema :)')
         
+    elif(resp == '5'):
+        os.system ("cls")
+        print('Gracias por usar el sistema :)')
+    
     else:
         print('Esta opción no está disponible en el menú')
         print('Intente de nuevo... ')
