@@ -27,14 +27,15 @@ def calcular5(lado, ang1, ang2):
     area = ( ((lado)**2) * math.sin(angulo1) * math.sin(angulo2) ) / (2 * math.sin(angulo1 + angulo2))
     return area
 
-def esnumero(es, num):
+def esnumero():
     while True:
        entrada = input('Escriba el numero: ')
        try:
            entrada = float(entrada)
            while(entrada <= 0):
-            print('El valor de un lado debe ser superior a 0')
-            entrada = input('Escriba el valor del ', es, ' ', num ,' : ')
+                print('El valor de un lado debe ser superior a 0')
+                entrada = input('Ingrese de nuevo: ')
+                entrada = float(entrada)
            return entrada
        except ValueError:
            print ("CHUPEEEMOOOOOOOOOOS!!!!!!!!!! y vuelve a ingresar otro valor, que sea numero, gil")
@@ -82,7 +83,7 @@ def main():
 
     if (resp == '1'):
         # ingreso del valor del lado 1 y control de este
-        lado1 = esnumero('lado', '1')
+        lado1 = esnumero()
 
         # ingreso del valor del lado 2 y control de este
         lado2 = float(input('Ingrese el valor del lado 2: '))
